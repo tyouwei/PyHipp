@@ -3,6 +3,8 @@
 # Submit this script with: sbatch <this-filename>
 
 #SBATCH --time=24:00:00   # walltime
+#SBATCH --time=1:00:00   # walltime
+
 #SBATCH --ntasks=1   # number of processor cores (i.e. tasks)
 #SBATCH --nodes=1   # number of nodes
 #SBATCH -J "pipe"   # job name
@@ -32,4 +34,3 @@ print(time.localtime()); \
 print(time.time()-t0);"
 
 aws sns publish --topic-arn arn:aws:sns:ap-southeast-1:xxxxxx:awsnotify --message "JobDone"
-
